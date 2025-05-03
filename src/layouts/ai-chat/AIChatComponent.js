@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
 
 // TODO: Insert your Gemini API key below
-const GEMINI_API_KEY = "AIzaSyBfucKp8fKtvC57FZxi3BOhVrVPFehjc8Y";
+const GEMINI_API_KEY = "";
 
 const predefinedResponses = {
   "who is your devloper":

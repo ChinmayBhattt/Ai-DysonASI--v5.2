@@ -17,7 +17,8 @@ import ButtonBase from "@mui/material/ButtonBase";
 import { styled } from "@mui/material/styles";
 import Tooltip from "@mui/material/Tooltip";
 
-const GEMINI_API_KEY = "AIzaSyBfucKp8fKtvC57FZxi3BOhVrVPFehjc8Y";
+// Access API key from environment variable, with fallback
+const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY
 
 const StyleButton = styled(ButtonBase)(({ theme }) => ({
   width: 60,

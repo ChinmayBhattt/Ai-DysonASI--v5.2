@@ -104,6 +104,13 @@ export default function AIImageGenerator() {
     setError("");
     setImageUrl("");
 
+    // Check if API key is available
+    if (!GEMINI_API_KEY) {
+      setError("API key is missing. Please add REACT_APP_GEMINI_API_KEY to your .env file.");
+      setGenerating(false);
+      return;
+    }
+
     let fullPrompt = prompt.trim();
 
     // If prompt is empty, use a default prompt

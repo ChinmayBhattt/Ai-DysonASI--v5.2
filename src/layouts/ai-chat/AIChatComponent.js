@@ -3,8 +3,8 @@ import "./AIChatComponent.css";
 import { motion, AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
 
-// TODO: Insert your Gemini API key below
-const GEMINI_API_KEY = "AIzaSyBfucKp8fKtvC57FZxi3BOhVrVPFehjc8Y";
+// Access API key from environment variable
+const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY || "";
 
 const predefinedResponses = {
   "who is your devloper":
@@ -235,6 +235,21 @@ const AIChatComponent = () => {
         ]);
         setIsProcessing(false);
       }, 500); // Simulate thinking delay
+      return;
+    }
+
+    // Check if API key is available
+    if (!GEMINI_API_KEY) {
+      setMessages((msgs) => [
+        ...msgs.slice(0, -1),
+        {
+          isUser: false,
+          html: formatResponse(
+            "API key is missing. Please add REACT_APP_GEMINI_API_KEY to your .env file."
+          ),
+        },
+      ]);
+      setIsProcessing(false);
       return;
     }
 

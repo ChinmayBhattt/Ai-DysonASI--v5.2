@@ -46,6 +46,7 @@ import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
 import AIChat from "layouts/ai-chat";
 import AIImageGenerator from "layouts/ai-image-generator";
+import AIVideoGenerator from "layouts/ai-video-generator";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
@@ -78,10 +79,10 @@ const routes = [
   {
     type: "collapse",
     name: "Text To Video",
-    key: "rtl",
+    key: "text-to-video",
     icon: <Icon fontSize="small">movie</Icon>,
-    route: "/rtl",
-    component: <RTL />,
+    route: "/text-to-video",
+    component: <AIVideoGenerator />,
   },
   {
     type: "collapse",
